@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Quarterly Earnings — RevealJS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Reveal core & theme (via cdnjs) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/theme/white.min.css" id="theme">
+  <!-- Code highlight theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/highlight/monokai.min.css">
+  <style>
+    .email { font-size: 28px; color:#555; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide with your email -->
+      <section>
+        <h1>Q2 FY2025 Earnings</h1>
+        <p class="email">24f1002401@ds.study.iitm.ac.in</p>
+        <aside class="notes">Greet stakeholders. Share agenda: KPIs, code demo, DCF.</aside>
+      </section>
+
+      <!-- ✅ Markdown slide -->
+      <section data-markdown>
+        <script type="text/template">
+## Agenda (Markdown)
+- **Overview**
+- **Revenue drivers**
+- **Risks & outlook**
+- **Demo:** interactive chart
+        </script>
+      </section>
+
+      <!-- ✅ Fragments (bullets appear one by one) -->
+      <section>
+        <h2>KPIs</h2>
+        <ul>
+          <li class="fragment">Revenue ↑ 12% YoY</li>
+          <li class="fragment">Net Income ↑ 8% YoY</li>
+          <li class="fragment fade-up">Operating Margin 21%</li>
+        </ul>
+        <aside class="notes">Advance to reveal each KPI. Pause for questions.</aside>
+      </section>
+
+      <!-- ✅ Code with syntax highlighting + step highlights -->
+      <section>
+        <h2>Code: Quick margin calc</h2>
+        <pre><code class="language-python" data-trim data-line-numbers="1-3|5-8">
+import pandas as pd
+
+rev = 2500  # crores
+op_income = 525
+margin = op_income / rev
+print(f"Operating margin: {margin:.2%}")
+        </code></pre>
+        <aside class="notes">Point at line highlights as they step: import → numbers → print.</aside>
+      </section>
+
+      <!-- ✅ Math (financial formula) -->
+      <section>
+        <h2>DCF Formula</h2>
+        \[
+          PV = \sum_{t=1}^{N} \frac{CF_t}{(1+r)^t}
+        \]
+        <aside class="notes">Explain CF_t (cash flows) and r (discount rate).</aside>
+      </section>
+
+      <!-- Optional live demo -->
+      <section>
+        <h2>Interactive Demo</h2>
+        <iframe data-src="https://example.com/demo" data-preload style="width:100%;height:480px;border:0;"></iframe>
+        <aside class="notes">Describe what to notice in the demo.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal core JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.js"></script>
+  <!-- Built-in plugins: Markdown, Highlight, Notes, Math -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/highlight/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/notes/notes.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/math/math.min.js"></script>
+
+  <script>
+    Reveal.initialize({
+      width: 1280, height: 720, transition: 'slide',
+      controls: true, progress: true,
+      // MathJax 3 config (loads from CDN)
+      mathjax3: {
+        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+      },
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3 ]
+    });
+  </script>
+</body>
+</html>
